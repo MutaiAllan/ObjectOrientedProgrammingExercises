@@ -2,11 +2,13 @@ public class Account {
     private String name;
     private String accNo;
     private int balance;
+    public String password;
 
-    public Account (String name, String accNo) {
+    public Account (String name, String accNo, String password) {
         this.name = name;
         this.accNo = accNo;
         this.balance = 0;
+        this.password = password;
     }
 
     public String getName(){
@@ -21,14 +23,23 @@ public class Account {
         return balance;
     }
 
-    public void transfer(String accNo, int amount){
-        this.balance -= amount;
+    public String getPassword() {
+        return password;
     }
 
-    public void getAccountDetails(Account account) {
-        System.out.println("Name:" + account.getName());
-        System.out.println("Account No:" + account.getAccNo());
-        System.out.println("Balance:" + account.getBalance());
+    public void depositMoney(int amount){
+        if(amount <= 0){
+            System.out.println("Enter amount more than 0!");
+        }
+        else {
+            balance += amount;
+            System.out.println("Successfully deposited " + amount);
+        }
+    }
+
+    public void transfer(Account accNo, int amount){
+        this.balance -= amount;
+        accNo.balance += amount;
     }
 
 }

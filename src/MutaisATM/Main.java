@@ -5,7 +5,9 @@ public class Main {
         System.out.println(Mutai.getName());
         System.out.println(Mutai.getBalance());
 
-        
+        Mutai.transfer("Nancy", 40);
+
+        System.out.println(Mutai.getBalance());
 
     }
 }

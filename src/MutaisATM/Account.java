@@ -17,4 +17,8 @@ public class Account {
         return balance;
     }
 
+    public void transfer(String recepientName, int amount){
+        this.balance -= amount;
+    }
+
 }

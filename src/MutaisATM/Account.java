@@ -13,12 +13,22 @@ public class Account {
         return name;
     }
 
+    public String getAccNo(){
+        return accNo;
+    }
+
     public int getBalance() {
         return balance;
     }
 
-    public void transfer(String recepientName, int amount){
+    public void transfer(String accNo, int amount){
         this.balance -= amount;
+    }
+
+    public void getAccountDetails(Account account) {
+        System.out.println("Name:" + account.getName());
+        System.out.println("Account No:" + account.getAccNo());
+        System.out.println("Balance:" + account.getBalance());
     }
 
 }
